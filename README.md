@@ -203,7 +203,6 @@ Here's a typical workflow for creating a post with cover image:
 
 ## Documentation
 
-- [COVER_IMAGE_IMPLEMENTATION.md](COVER_IMAGE_IMPLEMENTATION.md) - Technical details on image upload
 - [CLAUDE.md](CLAUDE.md) - Development guidelines for Claude Code
 
 ## Troubleshooting
