@@ -1,14 +1,16 @@
 {
-  "name": "substack-api",
-  "version": "1.4.0",
-  "description": "TypeScript API client for interacting with Substack webservice",
-  "main": "dist/index.js",
+  "name": "@danielsimonjr/substack-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for Substack API - interact with your Substack publication through Claude Desktop and Claude Code",
+  "main": "dist/mcp-server.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
     "build": "tsc",
+    "start": "node dist/mcp-server.js",
+    "dev": "tsc && node dist/mcp-server.js",
     "test": "npm run test:unit && npm run test:integration && npm run test:e2e",
     "test:unit": "jest",
     "test:integration": "jest --config jest.integration.config.js",
@@ -18,7 +20,7 @@
     "test:e2e:watch": "jest --config jest.e2e.config.js --watch",
     "test:all": "npm run test:unit && npm run test:integration && npm run test:e2e",
     "prepare": "npm run build",
-    "prepublishOnly": "npm run lint && npm test",
+    "prepublishOnly": "npm test",
     "clean": "rm -rf dist",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
@@ -26,22 +28,32 @@
     "format:check": "prettier --check \"src/**/*.ts\"",
     "sample": "npx ts-node samples/index.ts"
   },
+  "bin": {
+    "substack-mcp": "./dist/mcp-server.js"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jakub-k-slys/substack-api.git"
+    "url": "git+https://github.com/danielsimonjr/substack-mcp.git"
   },
   "keywords": [
     "substack",
     "api",
     "client",
-    "typescript"
+    "typescript",
+    "mcp",
+    "model-context-protocol",
+    "claude",
+    "claude-desktop",
+    "claude-code",
+    "newsletter",
+    "automation"
   ],
-  "author": "Jakub Slys",
+  "author": "Daniel Simon Jr.",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jakub-k-slys/substack-api/issues"
+    "url": "https://github.com/danielsimonjr/substack-mcp/issues"
   },
-  "homepage": "https://github.com/jakub-k-slys/substack-api#readme",
+  "homepage": "https://github.com/danielsimonjr/substack-mcp#readme",
   "devDependencies": {
     "@eslint/js": "^9.29.0",
     "@types/jest": "^30.0.0",
@@ -53,6 +65,7 @@
     "eslint-plugin-prettier": "^5.5.0",
     "jest": "^30.0.0",
     "jest-junit": "^16.0.0",
+    "playwright": "^1.56.1",
     "prettier": "^3.5.3",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.2",
@@ -62,7 +75,11 @@
     "access": "public"
   },
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.20.2",
     "fp-ts": "^2.16.10",
     "io-ts": "^2.2.22"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

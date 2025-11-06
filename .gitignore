@@ -66,3 +66,6 @@ out/
 
 # Yarn Integrity file
 .yarn-integrity
+
+# Sensitive data
+tools/cookie.txt
