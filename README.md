@@ -5,6 +5,10 @@
 
 An MCP (Model Context Protocol) server that allows Claude Desktop and Claude Code to interact with your Substack publication. Create posts with cover images, publish notes, manage your content, and more - all through natural conversation with Claude.
 
+<a href="https://glama.ai/mcp/servers/@danielsimonjr/substack-mcp">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@danielsimonjr/substack-mcp/badge" alt="Substack Server MCP server" />
+</a>
+
 ## Features
 
 - ✅ **Post Management**: Create full blog posts with cover images
